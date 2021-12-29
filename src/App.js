@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import TopBar from './component/topbar/TopBar'
+import Home from './page/home/Home'
+import Login from './page/login/Login'
+import Register from './page/register/Register'
+import Setting from './page/setting/Settings'
+import Single from './page/single/Single'
+import Write from './page/write/Write'
+import Footer from './component/footer/Footer'
+import MyPost from './page/myPost/MyPost'
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { React, useContext } from 'react'
+import { AuthContext } from '../src/context/authContext'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const {
+		authState: { isAuthenticated },
+	} = useContext(AuthContext)
+
+	return (
+		<BrowserRouter>
+			<TopBar />
+			<Routes>
+				<Route path="/register" element={<Register />} />
+				<Route path="/login" element={<Login />} />
+
+				<Route path="/" element={<Home />} />
+				<Route
+					path="/write"
+					element={isAuthenticated ? <Write /> : <Login />}
+				/>
+				<Route
+					path="/post/:postID"
+					element={isAuthenticated ? <Single /> : <Login />}
+				/>
+
+				<Route
+					path="/setting"
+					element={isAuthenticated ? <Setting /> : <Login />}
+				/>
+
+				<Route
+					path="/mypost"
+					element={isAuthenticated ? <MyPost /> : <Login />}
+				/>
+			</Routes>
+			<Footer />
+		</BrowserRouter>
+	)
 }
 
-export default App;
+export default App

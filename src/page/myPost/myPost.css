@@ -1,0 +1,13 @@
+.mypostcontainer{
+    display: flex;
+    flex-direction: column;
+    flex:11.4
+}
+
+.myPosts h1{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:20px;
+    font-weight: 500;
+    color: rgb(14, 133, 123);
+    margin: 16px;
+}

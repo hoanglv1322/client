@@ -1,0 +1,59 @@
+.comment{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-top: 32px;
+
+}
+
+.commentHeader{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content:space-between;
+}
+
+.avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgb(19, 17, 17);
+}
+
+.bodyComment{
+    margin-top:8px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+
+.dateComment{
+    font-size:16px;
+    margin-left: 12%;
+}
+
+.singlePostEditComment{
+    display: flex;
+    margin-right: 3%;
+}
+
+.singlePostEdit > p{
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.singlePostIcon{
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    float:right;
+}
+
+.commentText{
+    padding: 12px;
+    width: 90%;
+    margin-left: 16px;
+    border-radius: 5px;
+    background-color: rgb(221, 209, 209);
+    border: 1px solid #ccc;
+}

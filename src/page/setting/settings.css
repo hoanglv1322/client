@@ -1,0 +1,80 @@
+.setting-container{
+  display: flex;
+}
+
+.settings {
+  display: flex;
+}
+
+.settings{
+  flex:9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px;
+}
+
+.settingsTitle{
+    font-size: 40px;
+    margin-bottom: 32px;
+}
+
+.settingsForm{
+    width:50%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 16px;
+}
+
+.settingsPP {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  margin: 10px 0;
+}
+
+.settingsPP>img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+.settingsPPIcon {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: lightcoral;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.inputItem{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.inputItem input{
+  margin-top: 8px;
+  padding: 16px;
+  width: 100%;
+  border: 1px solid #ccc;
+  outline: none;
+  border-radius:5px;
+}
+
+.settingsSubmitButton{
+  margin-top:32px;
+  width: 30%;
+  padding: 8px;
+  border-radius: 5px;
+  margin-left: 35%;
+  outline: none;
+  background-color: rgb(60, 204, 41);
+}

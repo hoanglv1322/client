@@ -1,0 +1,72 @@
+.footer-app {
+    background-color: #201e1e;
+    color: white;
+    width: 100%;
+    font-family:'Varela Round',sans-serif;
+}
+
+.header-footer {
+    height: 48px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.header-footer .social-link {
+    display: flex;
+    margin-right: 32px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.header-footer .social-link>i {
+    font-size: 32px;
+    margin-right: 32px;
+    cursor: pointer;
+}
+
+.container-footer {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #ccc;
+    padding: 32px 0;
+}
+
+.footer-section {
+    font-size: 14px;
+    margin-top: 16px;
+}
+
+.footer-section ul {
+    list-style: none;
+    text-align: left;
+    padding: 0;
+}
+
+.footer-section h2 {
+    font-size: 16px;
+}
+
+.brand-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-section .brand-list img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 8px;
+}
+
+.footer-app .footer-privacy {
+    text-align: center;
+    padding: 16px;
+}
+
+.footer-app .footer-privacy{
+    text-align: center;
+}

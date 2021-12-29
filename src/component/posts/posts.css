@@ -1,0 +1,49 @@
+.posts{
+    flex: 11.4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.posts-continer{
+    margin-top: 16px;
+    padding-left: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    position: relative;
+    width: 100%;
+}
+
+.paginationBttns {
+    width: 80%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 32px 0;
+}
+
+.paginationBttns a {
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    border: 1px solid #2b2eff;
+    color: #2b2eff;
+    cursor: pointer;
+}
+
+.paginationBttns a:hover {
+    color: white;
+    background-color: #2b2eff;
+}
+
+.paginationActive a {
+    color: white;
+    background-color: #2b2eff;
+}
+
+.paginationDisabled a {
+    color: grey;
+    background-color: rgb(31, 30, 30);
+}
