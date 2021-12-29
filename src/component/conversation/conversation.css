@@ -1,0 +1,21 @@
+.conversation{
+    display: flex;
+    align-items: center;
+    margin:16px 0 ;
+}
+
+.conversationImg{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border: 1px solid #ccc;
+}
+
+.conversationName{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(30, 107, 126);
+    margin-left: 8px;
+}
+

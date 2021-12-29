@@ -8,6 +8,7 @@ import Single from './page/single/Single'
 import Write from './page/write/Write'
 import Footer from './component/footer/Footer'
 import MyPost from './page/myPost/MyPost'
+import Message from './page/messager/Message'
 import { Friend } from './page/friend/Friend'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
@@ -49,6 +50,11 @@ function App() {
 				<Route
 					path="/friends"
 					element={isAuthenticated ? <Friend /> : <Login />}
+				/>
+
+				<Route
+					path="/messager"
+					element={isAuthenticated ? <Message /> : <Login />}
 				/>
 			</Routes>
 			<Footer />

@@ -1,4 +1,4 @@
-import { React, useState, useContext } from 'react'
+import { React, useState, useContext, useEffect } from 'react'
 import './user.css'
 import { AuthContext } from '../../context/authContext'
 
@@ -9,8 +9,20 @@ export default function Post({ account }) {
 		addFriend,
 		deleteFriend,
 	} = useContext(AuthContext)
-	const isFriendCurrent = user.friends.includes(account._id)
-	const [isFriend, setIsFriend] = useState(isFriendCurrent)
+
+	const [isFriend, setIsFriend] = useState(false)
+
+	useEffect(() => {
+		let isFriendCurrent = false
+		user.friends?.forEach((friend) => {
+			if (friend._id === account._id) {
+				isFriendCurrent = true
+				setIsFriend(isFriendCurrent)
+				return isFriendCurrent
+			}
+		})
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [account])
 
 	const updateFriend = async (e) => {
 		e.preventDefault()

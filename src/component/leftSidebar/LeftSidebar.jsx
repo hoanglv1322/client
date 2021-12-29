@@ -5,8 +5,10 @@ export default function LeftSidebar() {
 	return (
 		<div className="leftSidebar">
 			<div className="leftItem">
-				<i className="icon fab fa-facebook-messenger"></i>
-				<p>Chat</p>
+				<Link to="/messager" className="link">
+					<i className="icon fab fa-facebook-messenger"></i>
+					<p>Chat</p>
+				</Link>
 			</div>
 			<div className="leftItem">
 				<Link to="/friends" className="link">
