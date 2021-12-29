@@ -15,7 +15,9 @@ export default function MyPost() {
 	} = useContext(AuthContext)
 
 	const myPost = posts.filter((post) => post.author._id === user._id)
-	const myLikePost = posts.filter((post) => post.userLikePost.includes(user._id))
+	const myLikePost = posts.filter((post) =>
+		post.userLikePost.includes(user._id)
+	)
 
 	return (
 		<div>
@@ -27,7 +29,12 @@ export default function MyPost() {
 						<Posts posts={myPost} postsPerPage={4} />
 					</div>
 					<hr />
-					<div className="myPosts">
+					<div
+						className="myPosts"
+						style={{
+							display: myLikePost.lenght > 0 ? 'block' : 'none',
+						}}
+					>
 						<h1>My posts favourites </h1>
 						<Posts posts={myLikePost} postsPerPage={4} />
 					</div>

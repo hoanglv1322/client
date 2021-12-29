@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { React, useContext, useState, useEffect } from 'react'
 import './topBar.css'
 import { AuthContext } from '../../context/authContext'
-import {PostContext} from '../../context/postContext'
+import { PostContext } from '../../context/postContext'
 
 export default function TopBar() {
 	const PF = 'http://localhost:5000/images/'
@@ -10,7 +10,9 @@ export default function TopBar() {
 		authState: { isAuthenticated, user },
 		logoutUser,
 	} = useContext(AuthContext)
-	const { postState: { posts }, } = useContext(PostContext)
+	const {
+		postState: { posts },
+	} = useContext(PostContext)
 
 	const [valueSearch, setValueSearch] = useState('')
 
@@ -18,17 +20,18 @@ export default function TopBar() {
 
 	const searchPost = () => {
 		if (valueSearch.length > 0) {
-			const resultPost = posts?.filter((post) => post?.titlePost.includes(valueSearch))
+			const resultPost = posts?.filter((post) =>
+				post?.titlePost.includes(valueSearch)
+			)
 			setResult(resultPost)
-		}
-		else {
+		} else {
 			setResult([])
 		}
 	}
 
 	useEffect(() => {
 		searchPost()
-	// eslint-disable-next-line react-hooks/exhaustive-deps
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [valueSearch])
 
 	const navigate = useNavigate()
@@ -63,7 +66,11 @@ export default function TopBar() {
 			</div>
 			<div className="right-Top">
 				<div className="searchTop">
-					<input type="text" name="name" onChange={(e)=> setValueSearch(e.target.value)}/>
+					<input
+						type="text"
+						name="name"
+						onChange={(e) => setValueSearch(e.target.value)}
+					/>
 					<i className="fas fa-search"></i>
 				</div>
 				<i className="top-icon far fa-bell"></i>
@@ -99,8 +106,12 @@ export default function TopBar() {
 					</ul>
 				)}
 			</div>
-			<div className="result-search" style={{display:  result.length > 0 ? 'block':'none'}}>
-				{result && result.map((post) => 
+			<div
+				className="result-search"
+				style={{ display: result.length > 0 ? 'block' : 'none' }}
+			>
+				{result &&
+					result.map((post) => (
 						<div className="post-result">
 							{post.file && (
 								<img
@@ -110,20 +121,34 @@ export default function TopBar() {
 								/>
 							)}
 							<div className="post-infor">
-								<span className="postCat">Type Post: {post.typePost}</span>
-								<h4 className="postTitle">
-									<Link to={`/post/${post._id}`} className="link">
+								<span className="postCat">
+									Type Post: {post.typePost}
+								</span>
+								<h4
+									className="postTitle"
+									onClick={() => setValueSearch('')}
+								>
+									<Link
+										to={`/post/${post._id}`}
+										className="link"
+									>
 										{post.titlePost}
 									</Link>
 								</h4>
 								<div className="postDate">
-									<div>Author: {post.author && post.author.username}</div>
-									<div>{new Date(post.dateCreated).toDateString()}</div>
+									<div>
+										Author:{' '}
+										{post.author && post.author.username}
+									</div>
+									<div>
+										{new Date(
+											post.dateCreated
+										).toDateString()}
+									</div>
 								</div>
 							</div>
 						</div>
-					)
-				}
+					))}
 			</div>
 		</div>
 	)

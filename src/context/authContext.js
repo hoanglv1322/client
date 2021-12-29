@@ -107,6 +107,61 @@ const AuthContextProvider = ({ children }) => {
 		}
 	}
 
+	//get all accounts
+	const getAllAccounts = async () => {
+		try {
+			const res = await axios.get(`${apiUrl}/auth/allAccounts`)
+			if (res.data.success) {
+				return res.data
+			}
+		} catch (error) {
+			if (error.response.data) return error.response.data
+			return { success: false, message: error.message }
+		}
+	}
+
+	//add friend
+	const addFriend = async (friendId) => {
+		try {
+			const res = await axios.put(`${apiUrl}/auth/addfriend/${friendId}`)
+			if (res?.data.success) {
+				dispatch({
+					type: UPDATE_USER,
+					payload: {
+						isAuthenticated: true,
+						user: res.data.user,
+					},
+				})
+			}
+			return res.data
+		} catch (error) {
+			if (error.response.data) return error.response.data
+			return { success: false, message: error.message }
+		}
+	}
+
+	//delete friend
+	const deleteFriend = async (friendId) => {
+		try {
+			const res = await axios.put(
+				`${apiUrl}/auth/deletefriend/${friendId}`
+			)
+			if (res?.data.success) {
+				dispatch({
+					type: UPDATE_USER,
+					payload: {
+						isAuthenticated: true,
+						user: res.data.user,
+					},
+				})
+			}
+			return res.data
+		} catch (error) {
+			if (error.response.data) return error.response.data
+			return { success: false, message: error.message }
+		}
+	}
+
 	// context data
 	const authContextData = {
 		loginUser,
@@ -114,6 +169,9 @@ const AuthContextProvider = ({ children }) => {
 		logoutUser,
 		registerUser,
 		updateInforUser,
+		getAllAccounts,
+		addFriend,
+		deleteFriend,
 	}
 
 	// return

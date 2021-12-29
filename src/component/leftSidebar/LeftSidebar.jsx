@@ -9,8 +9,10 @@ export default function LeftSidebar() {
 				<p>Chat</p>
 			</div>
 			<div className="leftItem">
-				<i className="icon fas fa-user-friends"></i>
-				<p>Friends</p>
+				<Link to="/friends" className="link">
+					<i className="icon fas fa-user-friends"></i>
+					<p>Friends</p>
+				</Link>
 			</div>
 			<div className="leftItem">
 				<i className="icon fas fa-music"></i>

@@ -8,6 +8,7 @@ import Single from './page/single/Single'
 import Write from './page/write/Write'
 import Footer from './component/footer/Footer'
 import MyPost from './page/myPost/MyPost'
+import { Friend } from './page/friend/Friend'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { React, useContext } from 'react'
@@ -43,6 +44,11 @@ function App() {
 				<Route
 					path="/mypost"
 					element={isAuthenticated ? <MyPost /> : <Login />}
+				/>
+
+				<Route
+					path="/friends"
+					element={isAuthenticated ? <Friend /> : <Login />}
 				/>
 			</Routes>
 			<Footer />
